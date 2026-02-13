@@ -1,0 +1,344 @@
+/* ============================================
+   HIVESMART BEAUTIFUL HEADER ENHANCEMENTS
+   Modern, elegant, and professional styling
+   ============================================ */
+
+/* === SMOOTH ANIMATIONS === */
+* {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === ENHANCED HEADER WRAPPER === */
+.header-wrapper {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.98) 0%, 
+    rgba(247, 250, 252, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 4px 20px rgba(59, 115, 133, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(59, 115, 133, 0.1);
+  position: sticky !important;
+  top: 0;
+  z-index: 1000;
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Scroll effect - shrink header on scroll */
+.header-wrapper.scrolled {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  box-shadow: 
+    0 8px 32px rgba(59, 115, 133, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* === LOGO ENHANCEMENTS === */
+.header-logo-link {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.header-logo-link::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 215, 156, 0.2) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.header-logo-link:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.header-logo-link:hover {
+  transform: scale3d(1.05, 1.05, 1) rotate(2deg) !important;
+  filter: drop-shadow(0 4px 12px rgba(255, 215, 156, 0.4));
+}
+
+.header-logo {
+  transition: all 0.4s ease;
+}
+
+/* === NAVIGATION LINKS === */
+.header-nav-link {
+  position: relative;
+  font-weight: 500 !important;
+  letter-spacing: 0.3px;
+  padding: 8px 16px !important;
+  color: var(--neutral--700) !important;
+  transition: all 0.3s ease;
+}
+
+/* Animated underline effect */
+.header-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    var(--accent--primary-1) 0%, 
+    var(--hs-teal-2) 100%);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.header-nav-link:hover::after,
+.header-nav-link.w--current::after {
+  width: 80%;
+}
+
+.header-nav-link:hover {
+  color: var(--accent--primary-1) !important;
+  transform: translateY(-2px);
+  text-shadow: 0 2px 8px rgba(59, 115, 133, 0.15);
+}
+
+/* Active/Current page styling */
+.header-nav-link.w--current {
+  color: var(--accent--primary-1) !important;
+  font-weight: 600 !important;
+}
+
+/* === CTA BUTTON ENHANCEMENTS === */
+.btn-primary {
+  background: linear-gradient(135deg, 
+    var(--accent--primary-1) 0%, 
+    var(--hs-teal-2) 100%) !important;
+  box-shadow: 
+    0 4px 16px rgba(59, 115, 133, 0.25),
+    0 1px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: none !important;
+  position: relative;
+  overflow: hidden;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Shimmer effect on button */
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 
+    0 8px 24px rgba(59, 115, 133, 0.35),
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+}
+
+.btn-primary:active {
+  transform: translateY(-1px) scale(0.98) !important;
+}
+
+/* === HAMBURGER MENU ENHANCEMENTS === */
+.hamburger-menu-wrapper {
+  padding: 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(59, 115, 133, 0.1);
+}
+
+.hamburger-menu-wrapper:hover {
+  background: rgba(59, 115, 133, 0.1);
+  transform: scale(1.1) rotate(90deg);
+  border-color: var(--accent--primary-1);
+}
+
+.hamburger-menu-bar {
+  background: linear-gradient(90deg, 
+    var(--accent--primary-1) 0%, 
+    var(--hs-teal-2) 100%);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu-wrapper:hover .hamburger-menu-bar {
+  box-shadow: 0 2px 8px rgba(59, 115, 133, 0.4);
+}
+
+/* === GLASS MORPHISM EFFECT === */
+.header-content-wrapper {
+  position: relative;
+}
+
+.header-content-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(
+    circle at top,
+    rgba(59, 115, 133, 0.03) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* === NAVIGATION LIST STYLING === */
+.header-nav-menu-list {
+  gap: 8px;
+}
+
+.header-nav-list-item {
+  position: relative;
+  margin: 0 4px;
+}
+
+/* Subtle glow effect on hover */
+.header-nav-list-item:hover {
+  filter: drop-shadow(0 2px 8px rgba(59, 115, 133, 0.15));
+}
+
+/* === RESPONSIVE ENHANCEMENTS === */
+@media (max-width: 991px) {
+  .header-nav-menu-wrapper {
+    background: linear-gradient(180deg, 
+      rgba(255, 255, 255, 0.98) 0%, 
+      rgba(247, 250, 252, 0.95) 100%);
+    backdrop-filter: blur(30px);
+    box-shadow: 
+      0 8px 32px rgba(59, 115, 133, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    margin-top: 16px;
+    padding: 24px;
+    border: 1px solid rgba(59, 115, 133, 0.1);
+  }
+  
+  .header-nav-link::after {
+    left: 0;
+    transform: translateX(0);
+  }
+}
+
+/* === FLOATING ANIMATION === */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.btn-primary.header-btn-hidde-on-mb {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* === ACCENT HIGHLIGHTS === */
+.header-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--accent--primary-1) 20%,
+    var(--hs-yl-1) 50%,
+    var(--accent--primary-1) 80%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.header-wrapper:hover::after {
+  opacity: 0.6;
+}
+
+/* === PERFORMANCE OPTIMIZATION === */
+.header-wrapper,
+.header-logo-link,
+.header-nav-link,
+.btn-primary {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* === ACCESSIBILITY === */
+.header-nav-link:focus,
+.btn-primary:focus {
+  outline: 3px solid rgba(59, 115, 133, 0.4);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* === LOADING ANIMATION === */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Add sparkle effect to logo on load */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+.header-logo-link::after {
+  content: '✨';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 16px;
+  opacity: 0;
+  animation: sparkle 2s ease-in-out infinite;
+}
